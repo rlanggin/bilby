@@ -10,9 +10,11 @@ from bilby_cython.geometry import (
 )
 from bilby_cython.time import greenwich_mean_sidereal_time
 
-from ..core.utils import (logger, run_commandline,
+from ..core.utils import (ra_dec_to_theta_phi,
+                          speed_of_light, logger, run_commandline,
                           check_directory_exists_and_if_not_mkdir,
                           SamplesSummary, theta_phi_to_ra_dec)
+
 from ..core.utils.constants import solar_mass
 
 try:
