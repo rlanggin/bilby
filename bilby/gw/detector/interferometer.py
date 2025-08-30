@@ -14,7 +14,7 @@ from .. import utils as gwutils
 from .calibration import Recalibrate
 from .geometry import InterferometerGeometry
 from .strain_data import InterferometerStrainData
-from ..conversion import generate_all_bbh_parameters
+from ..conversion import generate_all_bbh_parameters, component_masses_to_chirp_mass
 
 
 class Interferometer(object):
