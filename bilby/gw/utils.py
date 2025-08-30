@@ -15,7 +15,7 @@ from ..core.utils import (ra_dec_to_theta_phi,
                           check_directory_exists_and_if_not_mkdir,
                           SamplesSummary, theta_phi_to_ra_dec)
 
-from ..core.utils.constants import solar_mass
+from ..core.utils.constants import solar_mass, gravitational_constant
 
 try:
     import lal
