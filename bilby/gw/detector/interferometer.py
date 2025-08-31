@@ -313,6 +313,20 @@ class Interferometer(object):
             self.strain_data.frequency_array>=self.strain_data.minimum_frequency) & 
             (self.strain_data.frequency_array<=threshold_frequency)).flatten()
         cut_frequency = self.strain_data.frequency_array[args]
+
+        try:
+            parameters = generate_all_bbh_parameters(parameters)
+        except AttributeError:
+            logger.debug(
+                "generate_all_bbh_parameters parameters failed during check_signal_duration"
+            )
+            return
+
+        if ("mass_1" not in parameters) and ("mass_2" not in parameters):
+            if raise_error:
+                raise AttributeError("Unable to check signal duration as mass not given")
+            else:
+                return
         
         args_below_fmin = np.where(
             self.strain_data.frequency_array<self.strain_data.minimum_frequency)[0]
